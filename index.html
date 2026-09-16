@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Humanity in Transition - Academic Symposium</title>
+  <meta name="description" content="Humanity in Transition — an Academic Symposium hosted by Modern High School for Girls, Kolkata, for its 75th year. 5 November 2026.">
+  <link rel="icon" href="assets/mhs-75-crest-nav.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="navbar">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/mhs-75-crest-nav.png" alt="Modern High School for Girls — 75th Year Crest" class="nav-crest">
+        <div class="nav-brand-text">
+          <span class="nav-event-name">Humanity in Transition</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="schedule.html" class="nav-link">Schedule</a></li>
+        <li class="nav-dropdown">
+          <a href="it-technical.html" class="nav-link">IT Research Paper <span class="nav-caret"></span></a>
+          <div class="nav-dropdown-menu">
+            <a href="it-technical.html">
+              <span class="dd-title">Technical Track</span>
+              <span class="dd-desc">Cybersecurity &amp; Digital Infrastructure</span>
+            </a>
+            <div class="dd-divider"></div>
+            <a href="it-interdisciplinary.html">
+              <span class="dd-title">Interdisciplinary Track</span>
+              <span class="dd-desc">Technology &amp; Society</span>
+            </a>
+          </div>
+        </li>
+        <li><a href="business.html" class="nav-link">Business</a></li>
+        <li><a href="schools.html" class="nav-link">Schools</a></li>
+        <li><a href="registration.html" class="nav-link">Registration</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" onclick="toggleNav()" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="page-wrapper">
+    <!-- HOME HERO -->
+    <section class="home-hero">
+      <canvas id="dotfield"></canvas>
+      <div class="hero-inner">
+        <p class="hero-eyebrow">Modern High School for Girls, Kolkata</p>
+        <h1 class="hero-title">Humanity in <em>Transition</em></h1>
+        <br>
+        <p class="countdown-label">Symposium Begins In</p>
+        <div class="countdown">
+          <div class="cd-unit"><div class="cd-box"><span class="cd-num" id="cd-days">00</span></div><div class="cd-label">Days</div></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-unit"><div class="cd-box"><span class="cd-num" id="cd-hours">00</span></div><div class="cd-label">Hours</div></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-unit"><div class="cd-box"><span class="cd-num" id="cd-mins">00</span></div><div class="cd-label">Minutes</div></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-unit"><div class="cd-box"><span class="cd-num" id="cd-secs">00</span></div><div class="cd-label">Seconds</div></div>
+        </div>
+
+        <div class="hero-btns">
+          <a href="assets/humanity-in-transition-concept-note.pdf" target="_blank" rel="noopener" class="btn btn-navy">Read the Concept Note</a>
+          <a href="registration.html" class="btn btn-primary">Register a School</a>
+          <a href="schedule.html" class="btn btn-outline">View Schedule</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRACKS -->
+    <section class="section">
+      <div class="container-wide">
+        <div class="section-head">
+          <!-- <span class="num">01</span> -->
+          <h2 class="section-title">Two Segments, One Symposium</h2>
+          <div class="section-line"></div>
+        </div>
+        <!-- <p class="section-lede">The symposium is held in two parts on a single day &mdash; a Research, Technology &amp; Society segment in the morning, and a Business Product Pitch event in the afternoon. Explore each track below.</p> -->
+
+        <div class="track-grid">
+          <a class="track-card accent-navy fade-in" href="it-technical.html">
+            <span class="track-tag">Segment 1 &middot; Track 1</span>
+            <h3 class="track-name">Technical Paper</h3>
+            <p class="track-desc">• Data-driven research on Cybersecurity &amp; Digital Infrastructure <br>• Certified by RCC Institute of Information Technology.</p>
+            <span class="track-arrow">Details &rarr;</span>
+          </a>
+          <a class="track-card accent-red fade-in" href="it-interdisciplinary.html">
+            <span class="track-tag">Segment 1 &middot; Track 2</span>
+            <h3 class="track-name">Interdisciplinary Paper</h3>
+            <p class="track-desc">• Argument-driven papers on Technology &amp; Society <br>• Certified by CSIR &ndash; Indian Institute of Chemical Biology.</p>
+            <span class="track-arrow">Details &rarr;</span>
+          </a>
+          <a class="track-card accent-navy fade-in" href="business.html">
+            <span class="track-tag">Segment 2</span>
+            <h3 class="track-name">Business Pitch</h3>
+            <p class="track-desc">• Take a venture from idea to evidence-backed enterprise, pitched before a judging panel. <br>• Certified by Ms. Swati Gautam, Kolkata-based entrepreneur.</p>
+            <span class="track-arrow">Details &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-section">
+      <div class="gallery-label">
+        <!-- <p class="section-kicker">Gallery</p> -->
+        <h2 class="section-title">Moments from MHS</h2>
+      </div>
+      <div style="overflow:hidden;">
+        <div class="marquee-track">
+          <div class="gallery-tile placeholder"><span class="ph-mark">&#9670;</span><span class="ph-label">Opening Keynote</span></div>
+          <div class="gallery-tile placeholder"><span class="ph-mark">&#9670;</span><span class="ph-label">Research Paper Presentations</span></div>
+          <div class="gallery-tile placeholder"><span class="ph-mark">&#9670;</span><span class="ph-label">Business Pitch &amp; Judging</span></div>
+          <div class="gallery-tile placeholder"><span class="ph-mark">&#9670;</span><span class="ph-label">MHS Campus</span></div>
+          <div class="gallery-tile placeholder"><span class="ph-mark">&#9670;</span><span class="ph-label">75th Year Celebrations</span></div>
+          <div class="gallery-tile placeholder"><span class="ph-mark">&#9670;</span><span class="ph-label">Closing Ceremony</span></div>
+          <!-- duplicate set for seamless loop -->
+          <div class="gallery-tile placeholder"><span class="ph-mark">&#9670;</span><span class="ph-label">Opening Keynote</span></div>
+          <div class="gallery-tile placeholder"><span class="ph-mark">&#9670;</span><span class="ph-label">Research Paper Presentations</span></div>
+          <div class="gallery-tile placeholder"><span class="ph-mark">&#9670;</span><span class="ph-label">Business Pitch &amp; Judging</span></div>
+          <div class="gallery-tile placeholder"><span class="ph-mark">&#9670;</span><span class="ph-label">MHS Campus</span></div>
+          <div class="gallery-tile placeholder"><span class="ph-mark">&#9670;</span><span class="ph-label">75th Year Celebrations</span></div>
+          <div class="gallery-tile placeholder"><span class="ph-mark">&#9670;</span><span class="ph-label">Closing Ceremony</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTICIPATING SCHOOLS -->
+    <section class="schools-preview section-alt">
+      <div class="schools-preview-head">
+        <!-- <p class="section-kicker">20 Schools &middot; One Symposium</p> -->
+        <h2 class="section-title">Participating Schools</h2>
+      </div>
+
+      <div class="schools-marquee-row">
+        <div class="schools-marquee-track">
+          <div class="school-chip"><span class="chip-name">Modern High School for Girls</span></div>
+          <div class="school-chip"><span class="chip-name">Don Bosco Park Circus</span></div>
+          <div class="school-chip"><span class="chip-name">La Martiniere for Girls</span></div>
+          <div class="school-chip"><span class="chip-name">MP Birla Foundation</span></div>
+          <div class="school-chip"><span class="chip-name">Mahadevi Birla World Academy</span></div>
+          <div class="school-chip"><span class="chip-name">St. Xavier's Collegiate School</span></div>
+          <div class="school-chip"><span class="chip-name">The Heritage School</span></div>
+          <div class="school-chip"><span class="chip-name">Calcutta International School</span></div>
+          <div class="school-chip"><span class="chip-name">Garden High School</span></div>
+          <div class="school-chip"><span class="chip-name">Queen of the Mission School - Salt Lake</span></div>
+          <div class="school-chip"><span class="chip-name">Modern High School for Girls</span></div>
+          <div class="school-chip"><span class="chip-name">Don Bosco Park Circus</span></div>
+          <div class="school-chip"><span class="chip-name">La Martiniere for Girls</span></div>
+          <div class="school-chip"><span class="chip-name">MP Birla Foundation</span></div>
+          <div class="school-chip"><span class="chip-name">Mahadevi Birla World Academy</span></div>
+          <div class="school-chip"><span class="chip-name">St. Xavier's Collegiate School</span></div>
+          <div class="school-chip"><span class="chip-name">The Heritage School</span></div>
+          <div class="school-chip"><span class="chip-name">Calcutta International School</span></div>
+          <div class="school-chip"><span class="chip-name">Garden High School</span></div>
+          <div class="school-chip"><span class="chip-name">Queen of the Mission School - Salt Lake</span></div>
+        </div>
+      </div>
+      <div class="schools-marquee-row reverse">
+        <div class="schools-marquee-track">
+          <div class="school-chip"><span class="chip-name">Modern High School International</span></div>
+          <div class="school-chip"><span class="chip-name">La Martiniere for Boys</span></div>
+          <div class="school-chip"><span class="chip-name">DPS Ruby Park</span></div>
+          <div class="school-chip"><span class="chip-name">Bhavan's Gangabux Kanoria Vidyamandir</span></div>
+          <div class="school-chip"><span class="chip-name">Sushila Birla Girls' School</span></div>
+          <div class="school-chip"><span class="chip-name">Birla High School</span></div>
+          <div class="school-chip"><span class="chip-name">DPS Newtown</span></div>
+          <div class="school-chip"><span class="chip-name">South City International School</span></div>
+          <div class="school-chip"><span class="chip-name">Vivekananda Mission School</span></div>
+          <div class="school-chip"><span class="chip-name">Laxmipat Singhania School</span></div>
+          <div class="school-chip"><span class="chip-name">Modern High School International</span></div>
+          <div class="school-chip"><span class="chip-name">La Martiniere for Boys</span></div>
+          <div class="school-chip"><span class="chip-name">DPS Ruby Park</span></div>
+          <div class="school-chip"><span class="chip-name">Bhavan's Gangabux Kanoria Vidyamandir</span></div>
+          <div class="school-chip"><span class="chip-name">Sushila Birla Girls' School</span></div>
+          <div class="school-chip"><span class="chip-name">Birla High School</span></div>
+          <div class="school-chip"><span class="chip-name">DPS Newtown</span></div>
+          <div class="school-chip"><span class="chip-name">South City International School</span></div>
+          <div class="school-chip"><span class="chip-name">Vivekananda Mission School</span></div>
+          <div class="school-chip"><span class="chip-name">Laxmipat Singhania School</span></div>
+        </div>
+      </div>
+
+      <div class="schools-preview-cta">
+        <!-- <p>Invitations have gone out to twenty schools across Kolkata to compete across both tracks of the symposium.</p> -->
+        <a href="schools.html" class="btn btn-outline">View All Schools &rarr;</a>
+      </div>
+    </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">
+          <!-- <img src="assets/mhs-75-crest-nav.png" class="footer-crest" alt="MHS Crest"> -->
+          <div>
+            <div class="footer-event-name">Humanity in <i>Transition</i></div>
+            <div class="footer-event-sub">Academic Symposium &middot; 5 November, 2026</div>
+          </div>
+        </div>
+        <p class="footer-desc">Hosted by Modern High School for Girls, Kolkata, as part of the school&rsquo;s 75th Year &mdash; bringing research and enterprise from schools across the city together under one theme.</p>
+        <p class="footer-social-line">Read the <a href="assets/humanity-in-transition-concept-note.pdf" target="_blank" rel="noopener">concept note</a> or view the <a href="schools.html">participating schools</a>.</p>
+      </div>
+      <div class="footer-contact">
+        <h4>School Contact</h4>
+        <div class="contact-rows">
+          <div class="contact-row">
+            <span class="contact-icon">@</span>
+            <div class="contact-body">
+              <span class="contact-label">Email</span>
+              <a href="mailto:principal@mhsforgirls.edu.in?subject=Humanity%20in%20Transition%20%E2%80%94%20Enquiry" class="contact-value link">principal@mhsforgirls.edu.in</a>
+              <span class="contact-hint">Click to compose a message</span>
+            </div>
+          </div>
+          <div class="contact-row">
+            <span class="contact-icon">&#9742;</span>
+            <div class="contact-body">
+              <span class="contact-label">Phone</span>
+              <a href="tel:+913322875326" class="contact-value link">033 2287 5326</a>
+            </div>
+          </div>
+          <div class="contact-row">
+            <span class="contact-icon">&#9679;</span>
+            <div class="contact-body">
+              <span class="contact-label">Address</span>
+              <span class="contact-value">78, Syed Amir Ali Avenue, Ballygunge, Kolkata - 700019</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer-map">
+          <iframe src="https://www.google.com/maps?q=Modern+High+School+for+Girls,+78+Syed+Amir+Ali+Avenue,+Ballygunge,+Kolkata,+700019&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Modern High School for Girls location map"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; Humanity in Transition &mdash; Modern High School for Girls, Kolkata</span>
+      <a href="https://www.instagram.com/modernhighschool.forgirls/" target="_blank" rel="noopener" class="footer-handle">
+        <svg class="insta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+          <rect x="2.5" y="2.5" width="19" height="19" rx="5"/>
+          <circle cx="12" cy="12" r="4.3"/>
+          <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/>
+        </svg>
+        @modernhighschool.forgirls
+      </a>
+    </div>
+  </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="common.js"></script>
+  <script>startCountdown('2026-11-05T09:00:00+05:30');</script>
+</body>
+</html>

@@ -8,14 +8,27 @@ function toggleNav() {
   document.getElementById('navToggle').classList.toggle('is-open');
 }
 
-// ---- Dropdown (click support for touch/mobile; hover handles desktop via CSS) ----
+// ---- Dropdown (click-to-toggle at every width; stays open until clicked
+//      again or the user clicks elsewhere. Hover still opens it on desktop
+//      via CSS, but click no longer depends on hover to stay open.) ----
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.nav-dropdown > .nav-link').forEach(trigger => {
+  document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+    const trigger = dropdown.querySelector(':scope > .nav-link');
+    if (!trigger) return;
     trigger.addEventListener('click', (e) => {
-      if (window.innerWidth <= 980) {
-        e.preventDefault();
-        trigger.parentElement.classList.toggle('open');
-      }
+      e.preventDefault();
+      e.stopPropagation();
+      const isOpen = dropdown.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown.open').forEach(d => {
+        if (d !== dropdown) d.classList.remove('open');
+      });
+      dropdown.classList.toggle('open', !isOpen);
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    document.querySelectorAll('.nav-dropdown.open').forEach(dropdown => {
+      if (!dropdown.contains(e.target)) dropdown.classList.remove('open');
     });
   });
 

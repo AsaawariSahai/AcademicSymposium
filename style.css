@@ -19,6 +19,7 @@
   --red:        #a6192e;
   --red-dark:   #7d0f21;
   --red-light:  #c8213b;
+  --red-light-very:  #eb9aa6;
   --red-soft:   rgba(166,25,46,0.08);
 
   --line:       rgba(10,38,71,0.14);
@@ -436,8 +437,8 @@ a { color: inherit; }
 .back-link:hover { color: var(--white); }
 .page-eyebrow {
   display: inline-block; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
-  font-weight: 700; color: var(--red-light);
-  padding-bottom: 0.5rem; border-bottom: 2px solid var(--red-light); margin-bottom: 0.9rem;
+  font-weight: 700; color: var(--red-light-very);
+  padding-bottom: 0.5rem; border-bottom: 2px solid var(--red-light-very); margin-bottom: 0.9rem;
 }
 .page-title { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.1rem, 5vw, 3.1rem); line-height: 1.08; margin-bottom: 0.9rem; }
 .page-lede { color: rgba(255,255,255,0.7); font-size: 0.96rem; max-width: 640px; line-height: 1.7; }

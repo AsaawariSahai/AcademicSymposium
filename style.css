@@ -251,7 +251,7 @@ a { color: inherit; }
 .section-line { flex: 1; height: 1px; background: var(--line); }
 .section-navy .section-line { background: rgba(255,255,255,0.18); }
 .section-kicker {
-  font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+  font-size: 1.2rem; letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--red); font-weight: 700; margin-bottom: 0.7rem;
 }
 .section-lede { color: var(--ink-soft); font-size: 1rem; max-width: 680px; margin-bottom: 2.4rem; line-height: 1.75; }
@@ -277,7 +277,7 @@ a { color: inherit; }
 .track-card.accent-red::before { background: var(--red); }
 .track-tag {
   font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700;
-  color: var(--red); 
+  color: var(--red);
 }
 .track-card.accent-navy .track-tag { color: var(--navy); }
 .track-name {
@@ -533,21 +533,21 @@ a { color: inherit; }
 /* =====================================================
    SCHEDULE TABLE
 ===================================================== */
-.schedule-part { margin-bottom: 3.2rem; }
-.schedule-part-head { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
+.schedule-part { margin-bottom: 5rem; }
+.schedule-part-head { display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem; }
 .part-badge {
   font-family: var(--font-display); font-weight: 700; font-size: 0.78rem; color: var(--white);
   background: var(--navy); padding: 0.35rem 0.9rem; letter-spacing: 0.06em;
 }
 .part-badge.red { background: var(--red); }
 .schedule-part-title { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; color: var(--navy); }
-.schedule-table { width: 100%; border-collapse: collapse; background: var(--white); border: 1px solid var(--line); }
-.schedule-table tr { border-bottom: 1px solid var(--line-soft); }
+.schedule-table { width: 100%; border-collapse: collapse; background: var(--white); border: 3px solid var(--line); }
+.schedule-table tr { border-bottom: 3px solid var(--line-soft); }
 .schedule-table tr:last-child { border-bottom: none; }
 .schedule-table td { padding: 1rem 1.3rem; font-size: 0.87rem; color: var(--ink-soft); vertical-align: top; }
 .schedule-table td.time-col {
   font-family: var(--font-display); font-weight: 700; color: var(--navy); white-space: nowrap; width: 150px;
-  border-right: 1px solid var(--line-soft);
+  border-right: 3px solid var(--line-soft);
 }
 .schedule-table td ul { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
 .schedule-table td ul li::before { content: '— '; color: var(--red); }
@@ -573,7 +573,7 @@ a { color: inherit; }
   font-family: var(--font-display); font-size: 1.6rem; color: var(--ink-dim);
 }
 .school-logo-slot img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
-.school-name-slot { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); min-height: 2.4em; display: flex; align-items: center; justify-content: center; }
+.school-name-slot { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); min-height: 2.4em; display: flex; align-items: center; justify-content: center; }
 .school-index { font-size: 0.62rem; color: var(--red); font-weight: 700; letter-spacing: 0.1em; }
 
 /* =====================================================
@@ -645,4 +645,108 @@ a { color: inherit; }
 
 @media (max-width: 400px) {
   .hero-title { font-size: clamp(2.1rem, 9vw, 2.6rem); }
+}
+
+/* =====================================================
+   RESPONSIVE — ADDITIONAL DEVICE COVERAGE
+   Purely additive: nothing above this line was changed.
+   These rules only patch gaps the existing breakpoints
+   didn't cover, so every device from small phones through
+   large desktops renders cleanly.
+===================================================== */
+
+/* Guard against any element forcing horizontal scroll,
+   whatever the viewport width. */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* Long unbroken strings (emails, URLs, addresses) should wrap
+   instead of overflowing their container on narrow screens. */
+.contact-value,
+.footer-desc,
+.footer-social-line,
+.block-note,
+.page-lede,
+.hero-subtitle,
+.cp-text p,
+.timeline-desc,
+.track-desc {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Flex children containing text need min-width: 0, otherwise
+   they can push their flex container wider than the viewport
+   on narrow screens instead of wrapping. */
+.nav-brand,
+.footer-brand,
+.contact-row,
+.contact-row .contact-body,
+.schedule-part-head,
+.concept-panel .cp-text {
+  min-width: 0;
+}
+
+/* Tablet range just above the hamburger breakpoint (981–1140px):
+   the inline nav links can run tight here on smaller laptops/
+   tablets in landscape. Ease the spacing slightly. */
+@media (min-width: 981px) and (max-width: 1140px) {
+  .nav-links { gap: 0; }
+  .nav-links a.nav-link { padding: 0.6rem 0.65rem; font-size: 0.78rem; }
+  .nav-dropdown > .nav-link { gap: 0.25rem; }
+}
+
+/* Small phones (≤400px): keep card grids to a single column so
+   they never force horizontal scroll under their minmax() floor. */
+@media (max-width: 400px) {
+  .approach-grid,
+  .judging-grid,
+  .mandatory-grid {
+    grid-template-columns: 1fr;
+  }
+  .page-content, .page-content.wide { padding-left: 1.1rem; padding-right: 1.1rem; }
+  .page-hero { padding-left: 1.1rem; padding-right: 1.1rem; }
+  .home-hero { padding-left: 1.1rem; padding-right: 1.1rem; }
+  .countdown { gap: 0.4rem; }
+  .cd-box { min-width: 46px; padding: 0.5rem 0.25rem 0.45rem; }
+  .cd-sep { font-size: 1rem; padding-top: 0.2rem; }
+  .schools-grid { gap: 0.6rem; }
+}
+
+/* Very small / narrow devices (≤340px), including foldable cover
+   screens: last-resort tightening so nothing clips or overlaps. */
+@media (max-width: 340px) {
+  .nav-event-name { font-size: 1.15rem; }
+  .nav-crest { height: 38px; width: 38px; }
+  .site-nav .navbar { min-height: 60px; padding: 0.5rem 0.85rem; }
+  .page-wrapper { padding-top: 60px; }
+  .nav-links.is-open { top: 60px; }
+  .stat-pill { padding: 0.4rem 0.75rem; font-size: 0.72rem; }
+  .btn { padding: 0.75rem 1.4rem; font-size: 0.72rem; }
+}
+
+/* Short-viewport landscape phones: the fixed-height full-screen
+   hero shouldn't eat the whole visible area. */
+@media (max-height: 480px) and (orientation: landscape) {
+  .home-hero { min-height: auto; padding-top: 2rem; padding-bottom: 2rem; }
+}
+
+/* =====================================================
+   RESPONSIVE — PHONE NAV FIT (additive)
+   Nothing above was changed. On phones narrower than ~440px
+   the two crests + event name + menu button were wider than
+   the screen, pushing the hamburger off-screen. This lets the
+   brand shrink and scales the name so everything fits, while
+   leaving all other widths exactly as they were.
+===================================================== */
+@media (max-width: 480px) {
+  .nav-brand { flex-shrink: 1; gap: 0.45rem; min-width: 0; }
+  .nav-brand-text { min-width: 0; }
+  .nav-event-name { font-size: clamp(0.95rem, 4.9vw, 1.5rem); line-height: 1.1; }
+  .nav-crest { height: 38px; width: 38px; }
+  .nav-toggle { margin-left: 0.5rem; }
+}
+
+@media (max-width: 340px) {
+  .nav-crest { height: 32px; width: 32px; }
+  .nav-event-name { font-size: 0.9rem; }
 }
